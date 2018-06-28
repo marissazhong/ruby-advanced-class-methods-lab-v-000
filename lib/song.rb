@@ -33,8 +33,13 @@ class Song
   end
 
   def self.find_or_create_by_name(name)
-    find_by_name(name)
-    create_by_name(name)
+    to_find = find_by_name(name)
+    to_create = create_by_name(name)
+    if to_find
+      to_find
+    else
+      to_create
+    end
   end
 
   def self.alphabetical
