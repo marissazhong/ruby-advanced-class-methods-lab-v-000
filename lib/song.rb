@@ -44,8 +44,8 @@ class Song
     @@all.sort_by! {|song| song.name.downcase}
   end
 
-  def new_from_filename
-
+  def new_from_filename(filename)
+    filename.split('-','.').map(&:strip)
   end
 
   def create_from_filename
