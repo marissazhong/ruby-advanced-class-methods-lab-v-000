@@ -31,12 +31,17 @@ class Song
     end
   end
 
-  def find_or_create_by_name
-
+  def find_or_create_by_name(name)
+    i = 0
+    while i < @@all.length
+      return self if self.name == name
+      i+=1
+    end
+    create_by_name(name)
   end
 
   def alphabetical
-
+    @@all.sort_by! {|song| song.name.downcase}
   end
 
   def new_from_filename
