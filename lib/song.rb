@@ -12,9 +12,9 @@ class Song
 
   def self.create
     def initialize
-      self
       self.all << self
     end
+    self
   end
 
   def self.new_by_name(name)
