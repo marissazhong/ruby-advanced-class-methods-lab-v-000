@@ -51,8 +51,8 @@ class Song
   end
 
   def create_from_filename(filename)
-    new_from_file(filename)
-    
+    new_song = new_from_file(filename)
+    @@all << new_song
   end
 
   def destroy_all
