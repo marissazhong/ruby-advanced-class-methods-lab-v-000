@@ -20,7 +20,7 @@ class Song
 
   def self.create_by_name(name)
     @name = name
-    @@all << self
+    @@self.class.all << self
   end
 
   def self.find_by_name(name)
