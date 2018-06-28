@@ -11,7 +11,7 @@ class Song
   end
 
   def create
-    
+    @@all << 
   end
 
   def new_by_name
