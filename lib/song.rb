@@ -46,11 +46,13 @@ class Song
     properties = filename.split(/[,-]/).map(&:strip)
     song.name = properties[1]
     song.artist = properties[0]
+    song
   end
 
   def self.create_from_filename(filename)
-    new_song = new_from_filename(filename)
-    self.all << new_song
+    new_song = create
+
+    new_from_filename(filename)
   end
 
   def self.destroy_all
