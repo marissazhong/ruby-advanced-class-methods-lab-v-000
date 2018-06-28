@@ -35,11 +35,7 @@ class Song
   def self.find_or_create_by_name(name)
     to_find = find_by_name(name)
     to_create = create_by_name(name)
-    if to_find
-      to_find
-    else
-      to_create
-    end
+    to_find ? to_find : to_create
   end
 
   def self.alphabetical
