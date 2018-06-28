@@ -14,16 +14,16 @@ class Song
     @@all << self
   end
 
-  def new_by_name(name)
+  def self.new_by_name(name)
     @name = name
   end
 
-  def create_by_name(name)
+  def self.create_by_name(name)
     @name = name
     @@all << self
   end
 
-  def find_by_name(name)
+  def self.find_by_name(name)
     i = 0
     while i < @@all.length
       return self if self.name == name
@@ -31,7 +31,7 @@ class Song
     end
   end
 
-  def find_or_create_by_name(name)
+  def self.find_or_create_by_name(name)
     i = 0
     while i < @@all.length
       return self if self.name == name
@@ -40,22 +40,22 @@ class Song
     create_by_name(name)
   end
 
-  def alphabetical
+  def self.alphabetical
     @@all.sort_by! {|song| song.name.downcase}
   end
 
-  def new_from_filename(filename)
+  def self.new_from_filename(filename)
     properties = filename.split('-','.').map(&:strip)
     @name = properties[1]
     @artist = properties[0]
   end
 
-  def create_from_filename(filename)
+  def self.create_from_filename(filename)
     new_song = new_from_file(filename)
     @@all << new_song
   end
 
-  def destroy_all
+  def self.destroy_all
     @@all = []
   end
 
