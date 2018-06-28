@@ -45,11 +45,14 @@ class Song
   end
 
   def new_from_filename(filename)
-    filename.split('-','.').map(&:strip)
+    properties = filename.split('-','.').map(&:strip)
+    @name = properties[1]
+    @artist = properties[0]
   end
 
-  def create_from_filename
-
+  def create_from_filename(filename)
+    new_from_file(filename)
+    
   end
 
   def destroy_all
