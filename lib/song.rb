@@ -23,8 +23,12 @@ class Song
     @@all << self
   end
 
-  def find_by_name
-
+  def find_by_name(name)
+    i = 0
+    while i < @@all.length
+      return self if self.name == name
+      i+=1
+    end
   end
 
   def find_or_create_by_name
