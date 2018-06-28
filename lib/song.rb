@@ -28,11 +28,7 @@ class Song
   end
 
   def self.find_or_create_by_name(name)
-    i = 0
-    while i < @@all.length
-      return self if self.name == name
-      i+=1
-    end
+    find_by_name(name)
     create_by_name(name)
   end
 
