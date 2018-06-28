@@ -11,15 +11,16 @@ class Song
   end
 
   def create
-    @@all << 
+    @@all << self
   end
 
-  def new_by_name
-
+  def new_by_name(name)
+    @name = name
   end
 
-  def create_by_name
-
+  def create_by_name(name)
+    @name = name
+    @@all << self
   end
 
   def find_by_name
