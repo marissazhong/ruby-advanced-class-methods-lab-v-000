@@ -46,7 +46,7 @@ class Song
     song = Song.new
     properties = filename.split(/[,-]/).map(&:strip)
     song.name = properties[1]
-    song.artist = properties[0]
+    song.artist_name = properties[0]
     song
   end
 
@@ -54,7 +54,7 @@ class Song
     new_song = create
     properties = filename.split(/[,-]/).map(&:strip)
     new_song.name = properties[1]
-    new_song.artist = properties[0]
+    new_song.artist_name = properties[0]
     new_song
   end
 
